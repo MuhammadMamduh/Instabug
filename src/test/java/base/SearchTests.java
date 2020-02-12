@@ -59,13 +59,13 @@ public class SearchTests extends BaseTests
         searchPage = new SearchPage(driver);
         searchPage.search("Egypt");
 
-        String pageTitle= searchPage.getTheListOfLinkResults().get(8).getText();
+        String pageTitle= searchPage.getTheListOfLinkResults().get(7).getText();
         System.out.println(pageTitle);
 
-        scrollToElement(driver, searchPage.getTheListOfLinkResults().get(7));
+        scrollToElement(driver, searchPage.getTheListOfLinkResults().get(6));
         try
         {
-            searchPage.getTheListOfLinkResults().get(8).click();
+            searchPage.getTheListOfLinkResults().get(7).click();
         }
         catch (Exception e)
         {
@@ -73,6 +73,7 @@ public class SearchTests extends BaseTests
         }
 
         Assert.assertEquals(driver.getTitle(), pageTitle);
+        driver.navigate().back();
     }
 
     @Test(priority = 1)
